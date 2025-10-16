@@ -3,6 +3,8 @@ package br.com.fiap.contatos.dao;
 import br.com.fiap.contatos.model.Contato;
 import jakarta.persistence.EntityManager;
 
+import java.util.List;
+
 public class ContatoDao {
 
     private EntityManager em;
@@ -38,5 +40,9 @@ public class ContatoDao {
             return;
         }
         System.out.println(contatoConsultar.toString());
+    }
+
+    public List<Contato> consultarTodos() {
+        return em.createQuery("from Contato", Contato.class).getResultList();
     }
 }

@@ -15,7 +15,8 @@ public class ContatoApp {
         //cadastrar(em);
         //atualizar(em);
         //remover(em);
-        consultar(em, 1L);
+        //consultar(em, 1L);
+        consultarTodos(em);
         em.close();
         Conexao.EMF.close();
     }
@@ -52,5 +53,10 @@ public class ContatoApp {
 
         ContatoDao contatoDao = new ContatoDao(em);
         contatoDao.consultar(id);
+    }
+
+    public static void consultarTodos(EntityManager em) {
+        ContatoDao contatoDao = new ContatoDao(em);
+        contatoDao.consultarTodos().forEach(System.out::println);
     }
 }
