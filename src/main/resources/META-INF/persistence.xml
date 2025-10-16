@@ -7,6 +7,7 @@
     <persistence-unit name="contatos" transaction-type="RESOURCE_LOCAL">
 
         <class>br.com.fiap.contatos.model.Contato</class>
+        <class>br.com.fiap.contatos.model.TipoContato</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />

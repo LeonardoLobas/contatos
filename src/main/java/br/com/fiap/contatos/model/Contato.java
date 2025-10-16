@@ -22,6 +22,10 @@ public class Contato {
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
+    @ManyToOne
+    @JoinColumn(name = "tipo_contato_id")
+    private TipoContato tipoContato;
+
     public String getNome() {
         return nome;
     }
@@ -54,6 +58,14 @@ public class Contato {
         this.dataNascimento = dataNascimento;
     }
 
+    public TipoContato getTipoContato() {
+        return tipoContato;
+    }
+
+    public void setTipoContato(TipoContato tipoContato) {
+        this.tipoContato = tipoContato;
+    }
+
     @Override
     public String toString() {
         return "Contato{" +
@@ -61,6 +73,7 @@ public class Contato {
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", dataNascimento=" + dataNascimento +
+                ", tipoContato=" + (tipoContato != null ? tipoContato.getDescricao() : "null") +
                 '}';
     }
 }
