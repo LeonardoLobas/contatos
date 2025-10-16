@@ -10,10 +10,10 @@ public class Contato {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contato_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CONTATO_ID_SEQ")
     @SequenceGenerator(
-            name = "contato_id_seq",
-            sequenceName = "contato_id_seq",
+            name = "CONTATO_ID_SEQ",
+            sequenceName = "CONTATO_ID_SEQ",
             allocationSize = 1
     )
     private Long id;
